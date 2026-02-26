@@ -38,7 +38,7 @@
 
         .faq-container {
             max-width: 800px;
-            margin: 50px auto;
+            margin: 60px auto;
             padding: 0 20px;
         }
 
@@ -50,19 +50,49 @@
         details {
             background: white;
             margin-bottom: 15px;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         summary {
-            font-weight: bold;
+            list-style: none;
+            padding: 18px 20px;
             cursor: pointer;
+            font-weight: bold;
             font-size: 16px;
+            position: relative;
         }
 
-        details p {
-            margin-top: 10px;
+        /* Remove default arrow */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Custom + icon */
+        summary::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        details[open] .faq-content {
+            max-height: 200px;
+            padding: 0 20px 20px 20px;
         }
 
         footer {
@@ -70,7 +100,13 @@
             color: white;
             text-align: center;
             padding: 15px;
-            margin-top: 50px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .faq-container {
+                margin: 40px auto;
+            }
         }
     </style>
 </head>
@@ -92,22 +128,30 @@
 
     <details>
         <summary>Is your firewood properly seasoned?</summary>
-        <p>Yes, all our firewood is fully seasoned and ready to burn for maximum heat and minimal smoke.</p>
+        <div class="faq-content">
+            <p>Yes, all our firewood is fully seasoned and ready to burn for maximum heat and minimal smoke.</p>
+        </div>
     </details>
 
     <details>
         <summary>Do you offer delivery?</summary>
-        <p>Yes, we offer reliable local delivery. Contact us to confirm delivery areas and fees.</p>
+        <div class="faq-content">
+            <p>Yes, we offer reliable local delivery. Contact us to confirm delivery areas and fees.</p>
+        </div>
     </details>
 
     <details>
         <summary>What types of firewood do you sell?</summary>
-        <p>We sell Ironbark mix, double split pizza cut wood, kindling, and full logs.</p>
+        <div class="faq-content">
+            <p>We sell Ironbark mix, double split pizza cut wood, kindling, and full logs.</p>
+        </div>
     </details>
 
     <details>
         <summary>What payment methods do you accept?</summary>
-        <p>We accept cash, bank transfer, and card payments.</p>
+        <div class="faq-content">
+            <p>We accept cash, bank transfer, and card payments.</p>
+        </div>
     </details>
 
 </div>
@@ -115,6 +159,20 @@
 <footer>
     <p>© 2026 Spark my Fire(wood) | All Rights Reserved</p>
 </footer>
+
+<script>
+    const allDetails = document.querySelectorAll("details");
+
+    allDetails.forEach(targetDetail => {
+        targetDetail.addEventListener("click", () => {
+            allDetails.forEach(detail => {
+                if (detail !== targetDetail) {
+                    detail.removeAttribute("open");
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
