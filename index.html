@@ -4,30 +4,42 @@
     <meta charset="UTF-8">
     <title>Spark my Fire(wood)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Premium firewood supplier. Ironbark mix, pizza cut wood, kindling and full logs available for pickup and delivery. Call 0401830455.">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
+            font-family: Arial, sans-serif;
             background-color: #f4f1ea;
         }
 
         header {
             background-color: #3b2f2f;
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 18px;
         }
 
         nav {
             background-color: #5c4033;
-            padding: 10px;
             text-align: center;
+            padding: 12px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
             font-weight: bold;
         }
 
@@ -36,23 +48,27 @@
         }
 
         .hero {
-            padding: 40px;
             text-align: center;
+            padding: 50px 20px;
             background-color: #e8dfd3;
+        }
+
+        .hero h2 {
+            margin-top: 0;
         }
 
         .products {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
             padding: 40px;
         }
 
         .product {
-            background-color: white;
+            background: white;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             text-align: center;
         }
 
@@ -63,9 +79,9 @@
             border-radius: 6px;
         }
 
-        .info-section {
+        .info {
             background-color: #e8dfd3;
-            padding: 30px;
+            padding: 40px 20px;
             text-align: center;
         }
 
@@ -76,9 +92,10 @@
             padding: 15px;
         }
 
-        .contact {
-            font-size: 18px;
-            margin-top: 10px;
+        @media (max-width: 600px) {
+            .products {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -86,7 +103,7 @@
 
 <header>
     <h1>Spark my Fire(wood)</h1>
-    <p class="contact">📞 0401830455</p>
+    <p>📞 0401830455</p>
 </header>
 
 <nav>
@@ -97,39 +114,41 @@
 
 <section class="hero">
     <h2>Premium Firewood That Burns Longer & Hotter 🔥</h2>
-    <p>High-quality, seasoned firewood delivered to your door or ready for pickup. Stay warm, cook better, and spark your fire the right way!</p>
+    <p>High-quality seasoned firewood available for pickup or delivery. Stay warm and spark your fire the right way.</p>
 </section>
 
 <section class="products">
+
     <div class="product">
         <img src="https://images.unsplash.com/photo-1606755962773-d324e0a3e1b1" alt="Ironbark Mix">
         <h3>Ironbark Mix</h3>
-        <p>Long-burning hardwood perfect for winter heating.</p>
+        <p>Long-burning hardwood perfect for home heating.</p>
     </div>
 
     <div class="product">
         <img src="https://images.unsplash.com/photo-1598515214211-89d3a3c4b5c1" alt="Double Split Pizza Cut">
         <h3>Double Split Pizza Cut</h3>
-        <p>Perfect size for pizza ovens and smaller fireplaces.</p>
+        <p>Ideal size for pizza ovens and smaller fireplaces.</p>
     </div>
 
     <div class="product">
         <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Kindling">
         <h3>Kindling</h3>
-        <p>Dry, easy-light kindling to get your fire started fast.</p>
+        <p>Dry, easy-light kindling to start your fire fast.</p>
     </div>
 
     <div class="product">
         <img src="https://images.unsplash.com/photo-1616627561954-2d8b7e9c7d8c" alt="Full Logs">
         <h3>Full Logs</h3>
-        <p>Large full logs for slow, overnight burns.</p>
+        <p>Large logs for slow overnight burning.</p>
     </div>
+
 </section>
 
-<section class="info-section">
+<section class="info">
     <h2>Pickup & Delivery</h2>
     <p>✔ Local pickup available</p>
-    <p>✔ Fast and reliable delivery options</p>
+    <p>✔ Reliable delivery options</p>
 
     <h3>Location</h3>
     <p>123 Firewood Lane, YourTown, NSW</p>
@@ -138,7 +157,7 @@
     <p>Cash | Bank Transfer | Card</p>
 
     <h3>Opening Hours</h3>
-    <p>Mon - Sat: 7:00am - 5:00pm</p>
+    <p>Mon – Sat: 7:00am – 5:00pm</p>
     <p>Sunday: Closed</p>
 </section>
 
